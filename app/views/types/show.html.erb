@@ -1,0 +1,6 @@
+<h1><%= @type.category %></h1>
+
+<p><%= link_to "Edit", edit_type_path(@type)%></p>
+<p><%= link_to "Delete", type_path(@type),
+  :data => {:confirm => "You sure?", :method => "delete"}%></p>
+<p><%= link_to "Return to categories", types_path %></p>

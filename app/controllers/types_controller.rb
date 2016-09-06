@@ -4,6 +4,11 @@ class TypesController < ApplicationController
     render :index
   end
 
+  def show
+    @type = Type.find(params[:id])
+    render :show
+  end
+
   def new
     @type = Type.new
     render :new
@@ -23,6 +28,20 @@ class TypesController < ApplicationController
     render :edit
   end
 
+  def update
+    @type= Type.find(params[:id])
+    if @type.update(type_params)
+      redirect_to types_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @type = Type.find(params[:id])
+    @type.destroy
+    redirect_to types_path
+  end
 
   private
   def type_params
