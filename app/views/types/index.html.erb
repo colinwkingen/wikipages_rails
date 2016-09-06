@@ -1,0 +1,11 @@
+<h1>Business Types</h1>
+
+<ul>
+  <% @types.each do |type| %>
+    <li><%= link_to type.category, type_path(type) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "New Category", new_type_path %>
